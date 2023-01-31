@@ -35,13 +35,13 @@ app.post('/', async (req, res) => {
       presence_penalty: 0, // Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
     });
 
-    res.status(200).send({
+    res.status(500).send({
       bot: response.data.choices[0].text
     });
 
   } catch (error) {
     console.error(error)
-    res.status(500).send(error || 'Something went wrong');
+    res.status(500).send(error || 'حاجة غالطة صاحبي');
   }
 })
 
